@@ -1,0 +1,5 @@
+Tasks
+- Create an about component
+    -create a profile with name and stuff
+-create an activity component that holds data.json info
+-then pass that info to the components we are creating inside the activity component

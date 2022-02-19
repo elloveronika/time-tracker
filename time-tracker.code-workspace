@@ -1,0 +1,17 @@
+{
+  "folders": [
+	{
+		"name": "time-tracker",
+		"path": "."
+	},
+	{
+		"name": "images",
+		"path": "../../Downloads/time-tracking-dashboard-main/images"
+	},
+	{
+		"name": "design",
+		"path": "../../Downloads/time-tracking-dashboard-main/design"
+	}
+],
+  "settings": {}
+}
