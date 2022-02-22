@@ -1,0 +1,43 @@
+* {
+  box-sizing: border-box;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+body {
+  background-color: hsl(226, 43%, 10%);
+  color: antiquewhite;
+}
+.app {
+  display: flex;
+}
+.activity {
+  /* border: blue solid 1rem; */
+  background-color: hsl(235, 46%, 20%);
+}
+.about {
+  /* border: purple solid 1rem; */
+  background-color: hsl(235, 46%, 20%);
+}
+.about > img {
+  width: 10vw;
+  /* height: 10vh; */
+  border-radius: 100%;
+}
+.about:hover,
+.activity:hover {
+  background-color: hsla(235, 45%, 34%, 0.681);
+}
+.app--activity {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+.app {
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  /* margin: 1rem; */
+}
+.about {
+  margin: 1rem;
+}
