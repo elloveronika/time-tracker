@@ -9,26 +9,60 @@ import data from "./data.json";
 //   data.map((el) => el.title)
 // );
 const App = () => {
-  const [timeFrame, setTimeFrame] = useState(data);
+  const [timeFrame, setTimeFrame] = useState(
+    data.map((el) => {
+      let title = el.title;
+      let frame = el.timeframes.daily;
+      return { title, frame };
+    })
+  );
 
-  // console.log("this is timeframe", timeFrame);
-  let mappedTimeFrame = timeFrame.map((time) => time.timeframes);
-  console.log("this is mappedTimeFrame", mappedTimeFrame);
+  console.log("this is timeframe", timeFrame);
 
   const handleClickDaily = () => {
     console.log("hi this is click daily :3");
 
-    let mappedTimeFrame = timeFrame.map((time) => time.timeframes);
-    setTimeFrame((prevTime) => prevTime.map((time) => time.timeframes.daily));
+    setTimeFrame(
+      data.map((el) => {
+        let title = el.title;
+        let frame = el.timeframes.daily;
+        return { title, frame };
+      })
+    );
+  };
+  const handleClickWeekly = () => {
+    console.log("hi this is click weekly :3");
 
+    setTimeFrame(
+      data.map((el) => {
+        let title = el.title;
+        let frame = el.timeframes.weekly;
+        return { title, frame };
+      })
+    );
+  };
+  const handleClickMonthly = () => {
+    console.log("hi this is click monthly :3");
+
+    setTimeFrame(
+      data.map((el) => {
+        let title = el.title;
+        let frame = el.timeframes.monthly;
+        return { title, frame };
+      })
+    );
   };
 
   return (
     <div className="app">
-      <About someFunc={handleClickDaily} />
+      <About
+        dailyClicked={handleClickDaily}
+        weeklyClicked={handleClickWeekly}
+        monthlyClicked={handleClickMonthly}
+      />
       <div className="app--activity">
-        {data.map((el) => (
-          <Activity title={el.title} timeFrame={el.timeframes} />
+        {timeFrame.map((el) => (
+          <Activity title={el.title} selectedTimeFrame={el.frame} />
         ))}
       </div>
     </div>

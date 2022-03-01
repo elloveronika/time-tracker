@@ -10,9 +10,9 @@ const About = (props) => {
         <h2> Eugene V Sarah</h2>
       </div>
       <div className="about--tracker"></div>
-      <h3 onClick={() => props.someFunc}>Daily</h3>
-      <h3>Weekly</h3>
-      <h3>Monthly</h3>
+      <h3 onClick={props.dailyClicked}>Daily</h3>
+      <h3 onClick={props.weeklyClicked}>Weekly</h3>
+      <h3 onClick={props.monthlyClicked}>Monthly</h3>
     </div>
   );
 };
