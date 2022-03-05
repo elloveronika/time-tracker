@@ -9,26 +9,19 @@ import data from "./data.json";
 //   data.map((el) => el.title)
 // );
 const App = () => {
-  const [timeFrame, setTimeFrame] = useState(data);
+  const [timeFrame, setTimeFrame] = useState("weekly");
 
-  // console.log("this is timeframe", timeFrame);
-  let mappedTimeFrame = timeFrame.map((time) => time.timeframes);
-  console.log("this is mappedTimeFrame", mappedTimeFrame);
-
-  const handleClickDaily = () => {
-    console.log("hi this is click daily :3");
-
-    let mappedTimeFrame = timeFrame.map((time) => time.timeframes);
-    setTimeFrame((prevTime) => prevTime.map((time) => time.timeframes.daily));
-
-  };
+  function getTimeFrameData(time) {
+    console.log(time);
+    setTimeFrame(time);
+  }
 
   return (
     <div className="app">
-      <About someFunc={handleClickDaily} />
+      <About timeFunc={getTimeFrameData} />
       <div className="app--activity">
         {data.map((el) => (
-          <Activity title={el.title} timeFrame={el.timeframes} />
+          <Activity data={el} time={timeFrame} />
         ))}
       </div>
     </div>
